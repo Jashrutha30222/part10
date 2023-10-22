@@ -1,0 +1,81 @@
+App.js
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AppBarComponent from './ui/AppBarComponent'
+import First from './ui/First'
+import Second from './ui/Second'
+import Third from './ui/Third'
+
+export default function App() {
+  return (
+    <BrowserRouter>
+    <AppBarComponent>
+      <Routes>
+        <Route exact path="/" element={<First/>}>First</Route>
+        <Route exact path="/second" element={<Second/>}>First</Route>
+        <Route exact path="/third" element={<Third/>}>First</Route>
+        </Routes></AppBarComponent></BrowserRouter>
+    
+  )
+}
+
+First.js
+import { Stack ,Paper} from '@mui/material'
+import React from 'react'
+
+export default function First() {
+  return (
+    <Stack spacing={2} sx={{m:15,p:5}}>
+        <Paper sx={{width:"90%",p:5,height:"100%"}}>
+        <h1>First</h1>
+        </Paper>
+    </Stack>
+  )
+}
+Secong.js
+import { Stack ,Paper} from '@mui/material'
+import React from 'react'
+
+export default function First() {
+  return (
+    <Stack spacing={10} sx={{m:15,p:5,height:150,width:250}}>
+        <Paper sx={{width:"90%",p:5,m:15,height:"100%"}}>
+        <h1>Second</h1>
+        </Paper>
+    </Stack>
+  )
+}
+Third.js
+import { Stack ,Paper} from '@mui/material'
+import React from 'react'
+
+export default function First() {
+  return (
+    <Stack spacing={2} sx={{m:15,p:5}}>
+        <Paper sx={{width:"90%",p:5}}>
+        <h1>Third</h1>
+        </Paper>
+    </Stack>
+  )
+}
+
+App Bar Component
+import { AppBar, Toolbar,Button } from '@mui/material'
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+export default function AppBarComponent() {
+  return (
+    <AppBar>
+    <Toolbar>
+        <Button color="inherit" component={Link} to='/'>First Page</Button>
+        <Button color="inherit" component={Link} to='/second'>Second Page</Button>
+        <Button color="inherit" component={Link} to='/third'>Third Page</Button>
+
+        
+    </Toolbar>
+
+    </AppBar>
+   
+  )
+}
